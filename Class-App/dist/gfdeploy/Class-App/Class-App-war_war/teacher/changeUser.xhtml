@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Change an User's Details</title>
+    </h:head>
+    <h:body>
+
+        <h2>Change User Details Page</h2>
+        
+        <h3>Please enter the user id</h3>
+
+        <h:form>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="User Id:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="UserId" id="userid"
+                                         required="true" 
+                                         requiredMessage="User id must not be blank"
+                                         maxlength="5" 
+                                         value="#{myUserManagedBean.userid}">
+                                <f:validateLength minimum="5" maximum="5"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="userid" style="color:red"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+
+            <h:commandButton id="submit" value="Submit" action="#{myUserManagedBean.setUserDetailsForChange()}"/>
+
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+

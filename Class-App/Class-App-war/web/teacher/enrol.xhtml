@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Enrol a Student</title>
+    </h:head>
+    <h:body>
+
+        <h2>Enrol a Student into a Class</h2>
+
+        <h:form>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Student ID:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="StudentId" id="studentId"
+                                         required="true" 
+                                         requiredMessage="Student ID must not be blank"
+                                         maxlength="5" 
+                                         value="#{myEnrolmentManagedBean.classId}">
+                                <f:validateLength minimum="5" maximum="5"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="studentId" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Class ID:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="ClassId" id="classId"
+                                         required="true" 
+                                         requiredMessage="Class ID must not be blank"
+                                         maxlength="5" 
+                                         value="#{myEnrolmentManagedBean.studentId}">
+                                <f:validateLength minimum="5" maximum="5"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="classId" style="color:red"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+
+            <h:commandButton id="submit" value="Submit" 
+                             action="#{myEnrolmentManagedBean.addEnrolment()}"/>
+
+        </h:form>
+    </h:body>
+</html>
+
+
+

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Class Management - Main Menu</title>
+    </h:head>
+    <h:body>
+
+        <h1>
+            <h:outputText value="Class Management Application"/>
+        </h1>
+
+        <h2>
+            <h:outputText value="Teacher Main Menu"/>
+        </h2>
+
+        <ol>
+            <li>
+                <h:outputLink value="addUser.xhtml">
+                    Add a new User
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="changeUser.xhtml">
+                    Change a User's details
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="changeUserPassword.xhtml">
+                    Change an user's password
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="deleteUser.xhtml">
+                    Delete a User
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="displayUser.xhtml">
+                    Display a User's details
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="addClass.xhtml">
+                    Add a new Class
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="changeClass.xhtml">
+                    Change details of a Class
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="deleteClass.xhtml">
+                    Delete a Class
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="displayClass.xhtml">
+                    Display details of a class
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="enrol.xhtml">
+                    Enrol a Student
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="unenrol.xhtml">
+                    Unenrol a Student
+                </h:outputLink>
+            </li>
+        </ol>
+
+        <h:form>
+            Click <h:commandButton value="Logout" action="#{myLoginManagedBean.logoutResult()}"/>           
+        </h:form>
+
+    </h:body>
+</html>
+

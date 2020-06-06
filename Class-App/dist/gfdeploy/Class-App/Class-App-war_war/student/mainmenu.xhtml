@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Class Management - Main Menu</title>
+    </h:head>
+    <h:body>
+
+        <h1>
+            <h:outputText value="Class Management Application"/>
+        </h1>
+
+        <h2>
+            <h:outputText value="Student Main Menu"/>
+        </h2>
+
+        <ol>
+            <li>
+                <h:outputLink value="changeUser.xhtml">
+                    Change your details
+                </h:outputLink>
+            </li>
+            <li>
+                <h:outputLink value="changeUserPassword.xhtml">
+                    Change your password
+                </h:outputLink>
+            </li>
+            <li>
+                <h:outputLink value="displayClasses.xhtml">
+                    View your Classes
+                </h:outputLink>
+            </li>
+        </ol>
+
+        <h:form>
+            Click <h:commandButton value="Logout" action="#{myLoginManagedBean.logoutResult()}"/>           
+        </h:form>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Change Class's Details</title>
+    </h:head>
+    <h:body>
+        
+        <h2>Change Class Details Page</h2>
+            
+        <h3>Please update the details of class
+            <h:outputText value="#{myClassManagedBean.classId}"/>
+        </h3>
+        
+        <p></p>
+
+        <h:form>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Class ID:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="ClassId" id="classId"
+                                         required="true" 
+                                         requiredMessage="Class ID must not be blank"
+                                         maxlength="5" 
+                                         value="#{myClassManagedBean.classId}">
+                                <f:validateLength minimum="5" maximum="5"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="classId" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Name:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Name" id="name"
+                                         maxlength="25"
+                                         required="true" 
+                                         requiredMessage="Name must not be blank"
+                                         value="#{myClassManagedBean.className}"/>
+                        </td>
+                        <td>
+                            <h:message for="name" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Start Time:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="startHH" id="startHH"
+                                         maxlength="2"
+                                         required="true" 
+                                         requiredMessage="Start Time hours must not be blank"
+                                         value="#{myClassManagedBean.startHH}"/>
+                            :
+                        </td>
+                        <td>
+                            <h:inputText title="startMM" id="startMM"
+                                         maxlength="2"
+                                         required="true" 
+                                         requiredMessage="Start Time minutes must not be blank"
+                                         value="#{myClassManagedBean.startMM}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Duration: "/>
+                        </td>
+                        <td>
+                            <h:inputText title="durationHH" id="durationHH"
+                                         maxlength="2"
+                                         required="true" 
+                                         requiredMessage="Duration hours must not be blank"
+                                         value="#{myClassManagedBean.durationHH}"/>
+                            :
+                        </td>
+                        <td>
+                            <h:inputText title="durationMM" id="durationMM"
+                                         maxlength="2"
+                                         required="true" 
+                                         requiredMessage="Duration minutes must not be blank"
+                                         value="#{myClassManagedBean.durationMM}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Active:" for="active"/> 
+                        </td>
+                        <td>
+                            <h:selectBooleanCheckbox id="active" required="false"
+                                                     value="#{myClassManagedBean.active}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Teacher ID:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="TeacherId" id="teacherId"
+                                         required="true" 
+                                         requiredMessage="Teacher ID must not be blank"
+                                         maxlength="5" 
+                                         value="#{myClassManagedBean.teacherId}">
+                                <f:validateLength minimum="5" maximum="5"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="teacherId" style="color:red"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+
+            <h:commandButton id="submit" value="Submit" 
+                             action="#{myClassManagedBean.changeClass()}"/>
+
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+

@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Add a new User</title>
+    </h:head>
+    <h:body>
+
+        <h2>Please enter the details of an user</h2>
+
+        <h:form>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="User Id:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="UserId" id="userid"
+                                         required="true" 
+                                         requiredMessage="User id must not be blank"
+                                         maxlength="5" 
+                                         value="#{myUserManagedBean.userid}">
+                                <f:validateLength minimum="5" maximum="5"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="userid" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Name:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Name" id="name"
+                                         maxlength="25"
+                                         required="true" 
+                                         requiredMessage="Name must not be blank"
+                                         value="#{myUserManagedBean.name}"/>
+                        </td>
+                        <td>
+                            <h:message for="name" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Phone:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Phone" maxlength="10"
+                                         required="false"
+                                         value="#{myUserManagedBean.phone}"/>     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Address:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Address" maxlength="30" 
+                                         required="false"
+                                         value="#{myUserManagedBean.address}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Email:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Email" maxlength="30" 
+                                         required="false"
+                                         value="#{myUserManagedBean.email}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Password:"/>
+                        </td>
+                        <td>
+                            <h:inputSecret title="Password" id="password"
+                                         maxlength="8" required="true" 
+                                         requiredMessage="Password cannot be blank"
+                                         validator="#{myUserManagedBean.validatePasswordPair}"
+                                         value="#{myUserManagedBean.password}">
+                                <f:validateLength minimum="8" maximum="8"/>
+                                <f:attribute name="cnfpwd" value="#{cnfpwd}"/>
+                            </h:inputSecret>
+                        </td>
+                        <td>
+                            <h:message for="password" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Confirm Password:"/>
+                        </td>
+                        <td>
+                            <h:inputSecret id="cnfpwd" binding="#{cnfpwd}"
+                                         title="ConfirmPassword"
+                                         maxlength="8" 
+                                         required="true"
+                                         requiredMessage="Confirm Password must not be blank"
+                                         value="#{myUserManagedBean.confirmPassword}">
+                                <f:validateLength minimum="8" maximum="8"/>
+                            </h:inputSecret>
+                        </td>
+                        <td>
+                            <h:message for="cnfpwd" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="User Role:"/>
+                        </td>
+                        <td>
+                            <h:selectOneMenu id="userGroup"
+                                             required="true"
+                                             value="#{myUserManagedBean.userGroup}">
+                                <f:selectItem itemValue="CMA_TEACHER" itemLabel="Teacher"></f:selectItem>                                
+                                <f:selectItem itemValue="CMA_STUDENT" itemLabel="Student"></f:selectItem>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Active:" for="active"/> 
+                        </td>
+                        <td>
+                            <h:selectBooleanCheckbox id="active" required="false"
+                                                     value="#{myUserManagedBean.active}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+
+            <h:commandButton id="submit" value="Submit" 
+                             action="#{myUserManagedBean.addUser()}"/>
+
+        </h:form>
+    </h:body>
+</html>
+
+
+

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Display an User's Details</title>
+    </h:head>
+    <h:body>
+
+        <h2>
+            Details of User <h:outputText value="#{myUserManagedBean.userid}"/>
+        </h2>
+
+        <h:form>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Name:"/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myUserManagedBean.name}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Phone:"/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myUserManagedBean.phone}"/>     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Address:"/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myUserManagedBean.address}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Email:"/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myUserManagedBean.email}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="User Group:"/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myUserManagedBean.userGroup}"/>
+                        </td>
+                    </tr>    
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Active:"/> 
+                        </td>
+                        <td>
+                            <h:outputText value="#{myUserManagedBean.active}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+
+            Click <h:outputLink value="mainmenu.xhtml">here</h:outputLink>
+            to return to the Main Menu
+
+        </h:form>
+    </h:body>
+</html>
+
+
+
